@@ -1,7 +1,7 @@
 //Evolution settings
-var mutationrate = eval(prompt("mutation rate"));//Best: .3
-var ch = eval(prompt("mutation chance"));//Best: .3
-var pr = eval(prompt("passing rate"));//Best: 5
+var mutationrate = 0.3 //eval(prompt("mutation rate"));//Best: .3
+var ch = 0.3 //eval(prompt("mutation chance"));//Best: .3
+var pr = 5 //eval(prompt("passing rate"));//Best: 5
 var popsize;
 var population = [];
 var gen = 0;
@@ -17,12 +17,14 @@ var lst = [];
 var bird;
 
 function preload(){
-	bird = loadImage("images/bird.png");
+	bird = loadImage("./images/bird.png");
 }
+
 function setup(){
+	textSize(32);
 	imageMode(CENTER);
 	createCanvas(600,400);
-	popsize = 100;
+	popsize = 250;
 	for(var i = 0;i<popsize;i++){
 		population.push([generate(inputNo,hidden,output),new Player()]);
 	}
